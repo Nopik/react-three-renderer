@@ -55,7 +55,7 @@ class TextureDescriptor extends THREEElementDescriptor {
         ]),
         updateInitial: true,
         update(threeObject, value) {
-          threeObject[propName] = value;
+          threeObject[propName] = value !== undefined ? value : THREE.ClampToEdgeWrapping;
           if (threeObject.image) {
             threeObject.needsUpdate = true;
           }
